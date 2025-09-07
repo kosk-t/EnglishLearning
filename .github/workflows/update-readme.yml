@@ -11,6 +11,11 @@ on:
 permissions:
   contents: write
 
+# 同一ブランチでの同時実行を整理（競合軽減）
+concurrency:
+  group: readme-update-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -21,6 +26,8 @@ jobs:
           persist-credentials: true
           # 明示的にデフォルトトークンを利用（明確化のため。なくてもOK）
           token: ${{ secrets.GITHUB_TOKEN }}
+          # リベースのため履歴を全取得
+          fetch-depth: 0
 
       - name: Generate and update README HTML list
         run: |
@@ -55,6 +62,9 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add "$README"
             git commit -m "chore: add HTML list to README"
+            BRANCH=$(git rev-parse --abbrev-ref HEAD)
+            git fetch origin "$BRANCH"
+            git rebase "origin/$BRANCH"
             git push
             echo "Added markers and HTML list to README"
             exit 0
@@ -92,6 +102,9 @@ jobs:
           fi
 
           git commit -m "chore: update HTML file list in README"
+          BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          git fetch origin "$BRANCH"
+          git rebase "origin/$BRANCH"
           git push
       - name: Done
         run: echo "Done"
