@@ -1,0 +1,91 @@
+name: Update README with HTML list
+
+# HTML ファイルが push されたときに動かす（必要なら branches を指定）
+on:
+  push:
+    paths:
+      - '**/*.html'
+    # branches: [ 'main' ]   # 必要なら有効化
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Generate and update README HTML list
+        run: |
+          set -eux
+
+          README=README.md
+          START='<!-- HTML_LIST_START -->'
+          END='<!-- HTML_LIST_END -->'
+          TMP=./.tmp_html_list.md
+
+          # ヘッダ
+          echo "<!-- Auto-generated list: do not edit manually -->" > $TMP
+          echo "" >> $TMP
+          echo "## HTML files" >> $TMP
+          echo "" >> $TMP
+
+          # node_modules 等を除きつつ .html を列挙（./ を取り除く）
+          find . -path ./node_modules -prune -o -type f -name '*.html' -print \
+            | sed 's|^\./||' \
+            | sort \
+            | while IFS= read -r f; do
+                # 相対リンク形式で出力（README 上でクリック可能）
+                echo "- [\`$f\`](./$f)" >> $TMP
+              done
+
+          # README にマーカーがない場合は末尾に追加してコミット
+          if ! grep -q "$START" "$README"; then
+            printf "\n%s\n\n" "$START" >> "$README"
+            cat $TMP >> "$README"
+            printf "\n%s\n" "$END" >> "$README"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "$README"
+            git commit -m "chore: add HTML list to README"
+            git push
+            echo "Added markers and HTML list to README"
+            exit 0
+          fi
+
+          # マーカーで囲まれた箇所を置換（awk）
+          awk -v start="$START" -v end="$END" -v tmp="$TMP" '
+            BEGIN{inside=0}
+            {
+              if($0==start){
+                print
+                while((getline line < tmp) > 0) print line
+                inside=1
+                next
+              }
+              if($0==end){
+                print
+                inside=0
+                next
+              }
+              if(!inside) print
+            }' "$README" > README.new || true
+
+          mv README.new "$README"
+
+          # commit only if changed
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$README"
+
+          # staged に変更が無ければ終了（無限ループ防止）
+          if git diff --staged --quiet; then
+            echo "No changes to README"
+            exit 0
+          fi
+
+          git commit -m "chore: update HTML file list in README"
+          git push
+      - name: Done
+        run: echo "Done"
