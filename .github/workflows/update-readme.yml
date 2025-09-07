@@ -94,12 +94,12 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: chore: update HTML file list in README
+          commit-message: 'chore: update HTML file list in README'
           branch: chore/update-readme-html-list
           title: "chore: update HTML file list in README"
           body: "Automated update of README HTML file list."
-          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
+          committer: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
           signoff: false
       - name: Done
         run: echo "Done"
