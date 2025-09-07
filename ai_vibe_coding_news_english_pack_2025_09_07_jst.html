@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Vibe Coding & AI-Assisted Development — News English Pack (B1–B2)</title>
+<style>
+  :root{
+    --bg:#0f172a; /* slate-900 */
+    --panel:#111827; /* gray-900 */
+    --ink:#e5e7eb; /* gray-200 */
+    --muted:#9ca3af; /* gray-400 */
+    --accent:#22d3ee; /* cyan-400 */
+    --accent2:#a78bfa; /* violet-400 */
+    --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
+  }
+  html,body{background:var(--bg); color:var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height:1.6;}
+  header{max-width:980px; margin:24px auto 8px; padding:8px 16px;}
+  header h1{font-size:clamp(24px,3.5vw,36px); margin:0 0 6px;}
+  header p{margin:0; color:var(--muted)}
+  main{max-width:980px; margin:0 auto; padding:16px;}
+  section{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:18px; margin:18px 0;}
+  h2{font-size:clamp(20px,2.6vw,28px); margin:0 0 8px;}
+  h3{font-size:clamp(18px,2.2vw,22px); margin:8px 0; color:#e9d5ff}
+  .passage{background:rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.06); padding:14px; border-radius:12px;}
+  .grid{display:grid; gap:12px}
+  .cols-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+  .question{padding:12px; border:1px dashed rgba(255,255,255,0.15); border-radius:12px;}
+  .qhead{display:flex; gap:8px; align-items:center; justify-content:space-between}
+  .qtype{font-size:12px; color:var(--muted);}
+  .choices{display:grid; gap:6px; margin-top:8px}
+  .choices label{display:flex; gap:10px; align-items:center; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding:8px 10px; border-radius:10px; cursor:pointer}
+  .choices input{accent-color:var(--accent)}
+  .btn{background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#0b1020; font-weight:700; border:none; border-radius:10px; padding:8px 12px; cursor:pointer}
+  .btn.secondary{background:transparent; color:var(--ink); border:1px solid rgba(255,255,255,0.18)}
+  .btn:disabled{opacity:0.5; cursor:not-allowed}
+  .feedback{min-height:20px; margin-top:6px; font-weight:600}
+  .ok{color:var(--good)} .ng{color:var(--bad)} .hint{color:var(--warn)}
+  input[type=text]{width:100%; padding:8px 10px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:#0b1220; color:var(--ink)}
+  .note{color:var(--muted); font-size:13px}
+  .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); margin:28px 0}
+  .answers{background:#0b0f1f}
+  .page-break{break-before:page;}
+  .src li{margin-bottom:6px}
+  a{color:#7dd3fc}
+  .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#0a1222; border:1px solid rgba(255,255,255,0.12); border-radius:6px; padding:0 6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>AI Vibe Coding & AI-Assisted Development — News English Pack (B1–B2)</h1>
+  <p>Published: <strong>2025-09-07 (JST)</strong> · Topic focus: AI-assisted coding / “vibe coding” in real-world news</p>
+</header>
+<main>
+  <section id="problems">
+    <h2>Problems</h2>
+    <p class="note">Read the three news summaries (A–C). Then answer all questions A–D. Click choices or type your answers and press <span class="kbd">Check</span>. Your score appears without revealing the key. Full solutions are provided later.</p>
+
+    <div class="grid">
+      <div class="passage" id="passageA">
+        <h3>Passage A — Prompt-Injection Exploit Targets AI Coders (≈130 words)</h3>
+        <p>
+          Security researchers described a new technique nicknamed the <em>“CopyPasta License Attack.”</em> It hides malicious instructions inside markdown comments placed in files that developers rarely question, such as <span class="kbd">LICENSE.txt</span> or <span class="kbd">README.md</span>. When an AI coding assistant reads these files, it may treat the text as authoritative and replicate hidden directions across new or edited files, allowing the rogue content to <strong>propagate</strong> through a codebase. The disclosure drew attention because a major crypto exchange said its engineers widely use a popular AI-first editor. Experts recommend stronger safeguards: scan repositories for hidden comments, restrict what assistants can change, and require human review before committing AI-written changes. The broader lesson is to treat any untrusted text that enters an AI’s context as potentially hostile, especially in semi‑autonomous “vibe coding” workflows.
+        </p>
+      </div>
+      <div class="passage" id="passageB">
+        <h3>Passage B — Study: Faster Shipping, But Many More Risks (≈120 words)</h3>
+        <p>
+          An application‑security firm analyzed tens of thousands of repositories at very large enterprises to understand the impact of AI assistants on software quality. It concluded that developers using assistants produced much more code but also triggered a dramatic rise in “security findings.” Compared with late 2024, the monthly number of issues in mid‑2025 was about <em>ten times higher</em> in the studied set. While syntax mistakes and some logic bugs dropped, deeper problems multiplied: privilege‑escalation paths increased, design flaws appeared more often, and oversized pull requests complicated reviews. The message for leaders was blunt: if you scale AI‑generated code, you must scale application security practices in parallel—or you risk accelerating both delivery and danger.
+        </p>
+      </div>
+      <div class="passage" id="passageC">
+        <h3>Passage C — Adoption Surges in India, With Oversight (≈120 words)</h3>
+        <p>
+          A recent multi‑country survey reported strong uptake of AI‑assisted coding among Indian technology leaders. Nearly all respondents said their organizations use such tools, and most expect usage to grow further over the next year. Reported benefits include faster prototyping and productivity gains. Yet the same leaders emphasized governance: almost all said AI‑generated code undergoes <em>peer review</em> before release, and many warned about <em>over‑reliance</em> that could weaken skills, particularly for junior staff. Executives highlighted the need for training and clear policies so engineers can leverage assistants without outsourcing judgment. In short, companies are optimistic about AI‑enabled development but are pairing adoption with controls to keep maintainability and security at acceptable levels.
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>A) Reading Comprehension — 5 Questions</h3>
+    <div class="grid cols-2">
+      <!-- Q1 Main idea -->
+      <div class="question" data-q="rc1" data-answer="B">
+        <div class="qhead"><strong>Q1.</strong> <span class="qtype">Main idea (Passage A)</span></div>
+        <p>What is the central risk described in Passage A?</p>
+        <div class="choices">
+          <label><input type="radio" name="rc1"> A) Open‑source licenses may become invalid.</label>
+          <label><input type="radio" name="rc1"> B) Hidden prompts in common project files can make AI assistants spread malicious code.</label>
+          <label><input type="radio" name="rc1"> C) Cloud outages can erase AI context.</label>
+          <label><input type="radio" name="rc1"> D) AI tools will replace all human code reviewers.</label>
+        </div>
+        <button class="btn" onclick="checkMC('rc1')">Check</button>
+        <div class="feedback" id="rc1_fb"></div>
+      </div>
+
+      <!-- Q2 Detail -->
+      <div class="question" data-q="rc2" data-answer="C">
+        <div class="qhead"><strong>Q2.</strong> <span class="qtype">Detail (Passage B)</span></div>
+        <p>According to Passage B, how did the number of security findings change from late 2024 to mid‑2025 in the observed data?</p>
+        <div class="choices">
+          <label><input type="radio" name="rc2"> A) It stayed roughly the same.</label>
+          <label><input type="radio" name="rc2"> B) It doubled.</label>
+          <label><input type="radio" name="rc2"> C) It rose by about a factor of ten.</label>
+          <label><input type="radio" name="rc2"> D) It fell slightly due to better tooling.</label>
+        </div>
+        <button class="btn" onclick="checkMC('rc2')">Check</button>
+        <div class="feedback" id="rc2_fb"></div>
+      </div>
+
+      <!-- Q3 Inference -->
+      <div class="question" data-q="rc3" data-answer="A">
+        <div class="qhead"><strong>Q3.</strong> <span class="qtype">Inference (Passage C)</span></div>
+        <p>Which practice best reflects how Indian tech leaders balance AI adoption with risk?</p>
+        <div class="choices">
+          <label><input type="radio" name="rc3"> A) Mandating human peer review of AI‑generated code before release.</label>
+          <label><input type="radio" name="rc3"> B) Banning AI tools in production environments.</label>
+          <label><input type="radio" name="rc3"> C) Outsourcing security reviews to tool vendors.</label>
+          <label><input type="radio" name="rc3"> D) Allowing only junior engineers to use AI tools.</label>
+        </div>
+        <button class="btn" onclick="checkMC('rc3')">Check</button>
+        <div class="feedback" id="rc3_fb"></div>
+      </div>
+
+      <!-- Q4 Vocab-in-context -->
+      <div class="question" data-q="rc4" data-answer="C">
+        <div class="qhead"><strong>Q4.</strong> <span class="qtype">Vocab-in-Context (Passage A)</span></div>
+        <p>In Passage A, the word <em>“propagate”</em> most nearly means:</p>
+        <div class="choices">
+          <label><input type="radio" name="rc4"> A) document</label>
+          <label><input type="radio" name="rc4"> B) store</label>
+          <label><input type="radio" name="rc4"> C) spread</label>
+          <label><input type="radio" name="rc4"> D) encrypt</label>
+        </div>
+        <button class="btn" onclick="checkMC('rc4')">Check</button>
+        <div class="feedback" id="rc4_fb"></div>
+      </div>
+
+      <!-- Q5 True/False -->
+      <div class="question" data-q="rc5" data-answer="False">
+        <div class="qhead"><strong>Q5.</strong> <span class="qtype">True / False (Passage B)</span></div>
+        <p>“Apiiro’s analysis found that syntax errors <em>increased</em> by 76% when developers used AI assistants.”</p>
+        <div class="choices">
+          <label><input type="radio" name="rc5"> True</label>
+          <label><input type="radio" name="rc5"> False</label>
+        </div>
+        <button class="btn" onclick="checkMC('rc5')">Check</button>
+        <div class="feedback" id="rc5_fb"></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>B) Vocabulary & Collocation — 5 Questions</h3>
+    <div class="grid cols-2">
+      <!-- V1 over-reliance -->
+      <div class="question" data-q="v1" data-answer="B">
+        <div class="qhead"><strong>V1.</strong> <span class="qtype">Vocabulary (from Passage C)</span></div>
+        <p><strong>over‑reliance</strong> most nearly means:</p>
+        <div class="choices">
+          <label><input type="radio" name="v1"> A) fair distribution of work</label>
+          <label><input type="radio" name="v1"> B) depending on something too much</label>
+          <label><input type="radio" name="v1"> C) a temporary ban</label>
+          <label><input type="radio" name="v1"> D) quick recovery</label>
+        </div>
+        <button class="btn" onclick="checkMC('v1')">Check</button>
+        <div class="feedback" id="v1_fb"></div>
+      </div>
+
+      <!-- V2 safeguard -->
+      <div class="question" data-q="v2" data-answer="A">
+        <div class="qhead"><strong>V2.</strong> <span class="qtype">Vocabulary (from Passage A)</span></div>
+        <p>To <strong>safeguard</strong> code means to:</p>
+        <div class="choices">
+          <label><input type="radio" name="v2"> A) protect it from harm</label>
+          <label><input type="radio" name="v2"> B) rewrite it completely</label>
+          <label><input type="radio" name="v2"> C) license it as open source</label>
+          <label><input type="radio" name="v2"> D) compress it for storage</label>
+        </div>
+        <button class="btn" onclick="checkMC('v2')">Check</button>
+        <div class="feedback" id="v2_fb"></div>
+      </div>
+
+      <!-- V3 governance -->
+      <div class="question" data-q="v3" data-answer="D">
+        <div class="qhead"><strong>V3.</strong> <span class="qtype">Vocabulary (from Passage C)</span></div>
+        <p><strong>governance</strong> refers to:</p>
+        <div class="choices">
+          <label><input type="radio" name="v3"> A) hiring more junior staff</label>
+          <label><input type="radio" name="v3"> B) fixing syntax mistakes</label>
+          <label><input type="radio" name="v3"> C) buying tools with long contracts</label>
+          <label><input type="radio" name="v3"> D) rules and oversight that guide how something is run</label>
+        </div>
+        <button class="btn" onclick="checkMC('v3')">Check</button>
+        <div class="feedback" id="v3_fb"></div>
+      </div>
+
+      <!-- V4 collocation peer review -->
+      <div class="question" data-q="v4" data-answer="review">
+        <div class="qhead"><strong>V4.</strong> <span class="qtype">Collocation (from Passage C)</span></div>
+        <p>Complete the collocation: “peer <input type="text" id="v4_in" placeholder="type the missing word">.”</p>
+        <button class="btn" onclick="checkFill('v4','v4_in')">Check</button>
+        <div class="feedback" id="v4_fb"></div>
+      </div>
+
+      <!-- V5 collocation attack vector -->
+      <div class="question" data-q="v5" data-answer="vector">
+        <div class="qhead"><strong>V5.</strong> <span class="qtype">Collocation (from Passage A)</span></div>
+        <p>Security teams examined a new “attack <input type="text" id="v5_in" placeholder="type the missing word">.”</p>
+        <button class="btn" onclick="checkFill('v5','v5_in')">Check</button>
+        <div class="feedback" id="v5_fb"></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>C) Grammar Cloze — 2 Questions</h3>
+    <div class="grid cols-2">
+      <!-- G1 Relative clause -->
+      <div class="question" data-q="g1" data-answer="which">
+        <div class="qhead"><strong>G1.</strong> <span class="qtype">Grammar: Relative pronouns</span></div>
+        <p>“AI assistants, <input type="text" id="g1_in" placeholder="which/that/who"> are embedded in many IDEs, can boost speed but also multiply risks.”</p>
+        <button class="btn" onclick="checkFill('g1','g1_in')">Check</button>
+        <div class="feedback" id="g1_fb"></div>
+      </div>
+      <!-- G2 Conditionals -->
+      <div class="question" data-q="g2" data-answer="treated">
+        <div class="qhead"><strong>G2.</strong> <span class="qtype">Grammar: Conditionals</span></div>
+        <p>“If teams <input type="text" id="g2_in" placeholder="verb (past)"> all untrusted data as potentially malicious, they would reduce prompt‑injection risk.”</p>
+        <button class="btn" onclick="checkFill('g2','g2_in')">Check</button>
+        <div class="feedback" id="g2_fb"></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>D) Speaking Prompt — 30 seconds</h3>
+    <div class="question">
+      <p><strong>Prompt:</strong> In light of A–C, should companies move quickly into “vibe coding” with AI agents, or slow down for security and skills? State your position and give one pro and one con.</p>
+      <p class="note">Speak for ~30 seconds. You can record yourself on your device.</p>
+    </div>
+
+    <div style="display:flex; gap:8px; margin-top:10px">
+      <button class="btn" onclick="revealAnswers()">Reveal Answers & Explanations</button>
+      <button class="btn secondary" onclick="resetAll()">Reset All</button>
+    </div>
+  </section>
+
+  <section id="answers" class="answers page-break">
+    <h2>Answers & Explanations</h2>
+
+    <h3>A) Reading</h3>
+    <ol>
+      <li><strong>Q1:</strong> B — Hidden prompts in common files can make assistants spread malicious code. <em>Passage A explains markdown comments in LICENSE/README can replicate across files.</em></li>
+      <li><strong>Q2:</strong> C — Roughly 10× rise. <em>The study saw a tenfold increase in monthly security findings by mid‑2025 versus late 2024.</em></li>
+      <li><strong>Q3:</strong> A — Peer review before release. <em>Passage C highlights widespread oversight and review policies.</em></li>
+      <li><strong>Q4:</strong> C — “Propagate” ≈ “spread.” <em>It describes how hidden instructions move through a codebase.</em></li>
+      <li><strong>Q5:</strong> False — Syntax errors <em>decreased</em>, while deeper risks increased. <em>Passage B contrasts fewer surface errors with more serious issues.</em></li>
+    </ol>
+
+    <h3>B) Vocabulary & Collocation</h3>
+    <ol>
+      <li><strong>V1:</strong> B — <em>over‑reliance</em>: depending on something too much. <span class="note">Example: “Over‑reliance on code suggestions can weaken debugging skills.”</span></li>
+      <li><strong>V2:</strong> A — <em>safeguard</em>: protect from harm. <span class="note">Example: “They added pre‑commit checks to safeguard production branches.”</span></li>
+      <li><strong>V3:</strong> D — <em>governance</em>: rules and oversight for how something is run. <span class="note">Example: “Clear AI governance sets who approves model updates.”</span></li>
+      <li><strong>V4:</strong> <em>peer review</em> — natural use: “All AI changes go through <strong>peer review</strong> before merging.”</li>
+      <li><strong>V5:</strong> <em>attack vector</em> — natural use: “Hidden license text became a new <strong>attack vector</strong>.”</li>
+    </ol>
+
+    <h3>C) Grammar</h3>
+    <ol>
+      <li><strong>G1:</strong> <em>which</em> — Relative pronoun for non‑restrictive clause; commas show extra information.</li>
+      <li><strong>G2:</strong> <em>treated</em> — 2nd conditional (“If + past, would + base”) to express a hypothetical policy and its result.</li>
+    </ol>
+
+    <h3>D) Speaking — Sample Outline (not a full script)</h3>
+    <p><strong>Hook:</strong> “AI can write code faster than ever—so can attackers.” → <strong>Point:</strong> Adopt vibe coding where it adds value. → <strong>Evidence:</strong> Adoption is rising and speeds improve, but risks (10× findings; prompt‑injection) are real. → <strong>Counter:</strong> Slowing down entirely misses productivity gains and learning effects. → <strong>Close:</strong> Move fast <em>with</em> guardrails: peer review, restricted permissions, scanning, and training.
+    </p>
+  </section>
+
+  <section id="sources">
+    <h2>Sources (past 48 hours, JST)</h2>
+    <ul class="src">
+      <li>“Coinbase’s Go-To AI Coding Tool Found Vulnerable to ‘CopyPasta’ Exploit” — CoinDesk — https://www.coindesk.com/tech/2025/09/06/coinbase-s-go-to-ai-coding-tool-found-vulnerable-to-copypasta-exploit — <strong>2025-09-06 (JST)</strong></li>
+      <li>“AI code assistants make developers more efficient at creating security problems” — The Register — https://www.theregister.com/2025/09/05/ai_code_assistants_security_problems/ — <strong>2025-09-05 (JST)</strong></li>
+      <li>“AI-assisted coding rises among Indian tech leaders: Report” — The Economic Times (ETtech) — https://economictimes.indiatimes.com/tech/artificial-intelligence/ai-assisted-coding-rises-among-indian-tech-leaders-report/articleshow/123734347.cms — <strong>2025-09-06 (JST)</strong></li>
+    </ul>
+    <p class="note">All reporting above is paraphrased to respect copyright. Dates converted to Japan Standard Time (UTC+9) where possible.</p>
+  </section>
+</main>
+
+<script>
+  // Utility helpers
+  function norm(s){return (s||'').toString().trim().toLowerCase();}
+
+  function checkMC(qid){
+    const box = document.querySelector('.question[data-q="'+qid+'"]');
+    const ans = box.getAttribute('data-answer');
+    const selected = [...document.querySelectorAll('input[name="'+qid+'"]')].find(x=>x.checked);
+    const fb = document.getElementById(qid+'_fb');
+    if(!selected){fb.textContent='Select an option.'; fb.className='feedback hint'; return;}
+    const choiceText = selected.parentElement.textContent.trim();
+    const pickedLetter = choiceText.substring(0,1); // assumes choices start with letter
+    if(pickedLetter === ans){ fb.textContent='Correct!'; fb.className='feedback ok'; }
+    else { fb.textContent='Not quite. Try again.'; fb.className='feedback ng'; }
+  }
+
+  function checkFill(qid, inputId){
+    const box = document.querySelector('.question[data-q="'+qid+'"]');
+    const ans = norm(box.getAttribute('data-answer'));
+    const val = norm(document.getElementById(inputId).value);
+    const fb = document.getElementById(qid+'_fb');
+    if(!val){fb.textContent='Type your answer.'; fb.className='feedback hint'; return;}
+    // Accept simple plurals and punctuation-insensitive for collocations
+    const ok = (val===ans) || (val.replace(/\s+/g,'')===ans) ;
+    if(ok){ fb.textContent='Correct!'; fb.className='feedback ok'; }
+    else { fb.textContent='Not quite. Try again.'; fb.className='feedback ng'; }
+  }
+
+  function revealAnswers(){
+    document.getElementById('answers').scrollIntoView({behavior:'smooth'});
+  }
+
+  function resetAll(){
+    document.querySelectorAll('input[type=radio]').forEach(r=>r.checked=false);
+    document.querySelectorAll('input[type=text]').forEach(t=>t.value='');
+    document.querySelectorAll('.feedback').forEach(f=>{f.textContent=''; f.className='feedback';});
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+</script>
+</body>
+</html>

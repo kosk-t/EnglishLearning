@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI & Vibe Coding — News-based English Pack (2025-09-06 JST)</title>
+<style>
+  :root{
+    --ink:#0f172a;--muted:#475569;--accent:#2563eb;--good:#16a34a;--bad:#dc2626;--bg:#f8fafc;--card:#ffffff;--border:#e2e8f0;
+  }
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  header{background:linear-gradient(135deg,#e0f2fe 0%,#fdf2f8 100%);padding:28px 16px;border-bottom:1px solid var(--border)}
+  header h1{margin:0 0 6px;font-size:clamp(22px,3vw,30px)}
+  header p{margin:0;color:var(--muted)}
+  main{max-width:920px;margin:24px auto;padding:0 16px}
+  section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 1px 0 rgba(2,6,23,.04)}
+  h2,h3{margin:.2em 0 .4em}
+  .meta{font-size:.9rem;color:var(--muted)}
+  .articles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .article{border:1px dashed var(--border);border-radius:14px;padding:14px;background:#fcfcff}
+  .q{margin:14px 0;padding:14px;border:1px solid var(--border);border-radius:12px}
+  .q h4{margin:0 0 6px}
+  .choices{display:grid;gap:8px;margin-top:8px}
+  .choices label{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fff;cursor:pointer}
+  .choices input{margin-top:3px}
+  .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .btn{appearance:none;border:1px solid var(--border);background:#fff;color:var(--ink);padding:8px 12px;border-radius:10px;cursor:pointer}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.ghost{background:transparent}
+  .feedback{font-weight:600;margin-top:8px}
+  .ok{color:var(--good)} .ng{color:var(--bad)}
+  .cloze{display:grid;gap:10px}
+  .cloze input[type="text"]{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px}
+  .divider{height:2px;background:repeating-linear-gradient(90deg,var(--border),var(--border) 12px,transparent 12px,transparent 24px);margin:28px 0}
+  #answers{counter-reset:q}
+  #answers h4::before{counter-increment:q;content:"Q" counter(q) ". "}
+  #answers .ans{border-left:4px solid var(--accent);padding-left:10px;margin:8px 0}
+  .tag{display:inline-block;font-size:.75rem;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe;padding:2px 8px;border-radius:999px;margin-left:8px}
+  .src-list li{margin:.35em 0}
+  .print-note{font-size:.9rem;color:var(--muted)}
+  @media print{#answers{page-break-before:always}}
+</style>
+</head>
+<body>
+<header>
+  <h1>AI & Vibe Coding — News-based English Pack</h1>
+  <p class="meta">Date: 2025-09-06 (JST) · Level: CEFR B1–B2 · Theme: AI-assisted development & “vibe coding”</p>
+</header>
+<main>
+  <section id="problems">
+    <h2>Problems</h2>
+    <p class="meta">Instructions: Read the three news summaries (A–C). Then answer all questions A)–D). In this section, you will get only correctness feedback—<strong>no answers are revealed</strong>. Full answers and explanations appear later.</p>
+
+    <div class="articles">
+      <article class="article" id="artA">
+        <h3>Summary A</h3>
+        <p>
+          OpenAI has hired the small team behind “Alex,” an AI coding assistant that plugged directly into Apple’s Xcode. The move folds the Alex engineers into the group building OpenAI’s next coding agent. While existing users will still receive maintenance, the standalone Alex app is set to stop new downloads in early October. The shift reflects a broader consolidation: Apple has added ways to access outside AI tools in Xcode itself, and platform‑level assistants are becoming table stakes. For developers, the acqui‑hire hints that AI coding features may ship deeper inside core tools rather than live as separate add‑ons. It also raises questions about longevity and vendor lock‑in as independent plugins give way to first‑party integrations.
+        </p>
+      </article>
+      <article class="article" id="artB">
+        <h3>Summary B</h3>
+        <p>
+          A new industry analysis reports a trade‑off in AI‑assisted coding. Teams using code assistants can ship far more lines in less time and see fewer syntax or simple logic errors. Yet security findings surge: issues such as leaked credentials, privilege‑escalation paths, cloud misconfigurations, and shaky architecture appear more often when AI generates multi‑file changes. The report warns that volume can mask risk, as reviewers struggle to spot design flaws hidden inside large diffs. Companies rolling out mandatory AI coding policies are urged to invest in threat modeling, secure defaults, and careful human review. In short, productivity goes up—but so may the blast radius unless guardrails catch problems early.
+        </p>
+      </article>
+      <article class="article" id="artC">
+        <h3>Summary C</h3>
+        <p>
+          Security researchers described a “CopyPasta” technique that plants hidden prompts inside common documentation files, like README or LICENSE. Because many assistants treat such files as authoritative, the malicious text can be reproduced into new files the tool writes, quietly spreading across a codebase. The method targets popular AI coding editors and agents and could insert backdoors or data‑exfiltration steps without an obvious alert. The disclosure arrives as some large companies report a sizable share of daily code now written with AI. Experts recommend scanning repositories for suspicious comments, limiting what files assistants can read, and requiring humans to review generated changes before merging.
+        </p>
+      </article>
+    </div>
+
+    <h3>A) Reading Comprehension (5 questions)</h3>
+    <div class="q" data-qid="rc1" data-answer="B">
+      <h4>1) Main idea</h4>
+      <p>Which statement best captures a theme shared by Summaries A–C?</p>
+      <div class="choices">
+        <label><input type="radio" name="rc1">A. Companies are abandoning AI for software development altogether.</label>
+        <label><input type="radio" name="rc1">B. AI is moving deeper into developer tools, boosting speed but demanding stronger oversight and security.</label>
+        <label><input type="radio" name="rc1">C. Apple has replaced third‑party IDEs with Xcode worldwide.</label>
+        <label><input type="radio" name="rc1">D. Version control systems are no longer necessary for teams using AI.</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('rc1')">Check</button><span class="feedback" id="fb-rc1"></span></div>
+    </div>
+
+    <div class="q" data-qid="rc2" data-answer="B">
+      <h4>2) Detail (Summary A)</h4>
+      <p>What is planned for the Alex app after early October?</p>
+      <div class="choices">
+        <label><input type="radio" name="rc2">A. It will be open‑sourced and gain new features.</label>
+        <label><input type="radio" name="rc2">B. New downloads will stop, while maintenance for existing users continues.</label>
+        <label><input type="radio" name="rc2">C. It will be bundled inside Apple’s Xcode by default.</label>
+        <label><input type="radio" name="rc2">D. It will switch to a paid model with expanded access.</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('rc2')">Check</button><span class="feedback" id="fb-rc2"></span></div>
+    </div>
+
+    <div class="q" data-qid="rc3" data-answer="C">
+      <h4>3) Inference (Summary B)</h4>
+      <p>Given the trends described, which practice is most critical to add when adopting AI code assistants?</p>
+      <div class="choices">
+        <label><input type="radio" name="rc3">A. Replacing code reviews with faster merges</label>
+        <label><input type="radio" name="rc3">B. Focusing only on unit tests for syntax mistakes</label>
+        <label><input type="radio" name="rc3">C. Strengthening architectural review and threat modeling for large diffs</label>
+        <label><input type="radio" name="rc3">D. Disabling multi‑file changes to keep diffs tiny</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('rc3')">Check</button><span class="feedback" id="fb-rc3"></span></div>
+    </div>
+
+    <div class="q" data-qid="rc4" data-answer="B">
+      <h4>4) Vocabulary in context (Summary C)</h4>
+      <p>In this context, the word <em>“propagate”</em> is closest in meaning to:</p>
+      <div class="choices">
+        <label><input type="radio" name="rc4">A. Delete suddenly</label>
+        <label><input type="radio" name="rc4">B. Spread or multiply</label>
+        <label><input type="radio" name="rc4">C. Approve formally</label>
+        <label><input type="radio" name="rc4">D. Encrypt securely</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('rc4')">Check</button><span class="feedback" id="fb-rc4"></span></div>
+    </div>
+
+    <div class="q" data-qid="rc5" data-answer="B">
+      <h4>5) True / False (Summary B)</h4>
+      <p>AI assistance eliminates syntax errors entirely and reduces the need for human oversight.</p>
+      <div class="choices">
+        <label><input type="radio" name="rc5">A. True</label>
+        <label><input type="radio" name="rc5">B. False</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('rc5')">Check</button><span class="feedback" id="fb-rc5"></span></div>
+    </div>
+
+    <h3>B) Vocabulary & Collocation (5 questions)</h3>
+    <div class="q" data-qid="vc1" data-answer="C">
+      <h4>1) Vocabulary</h4>
+      <p>In Summary A, “acqui‑hire” most nearly means:</p>
+      <div class="choices">
+        <label><input type="radio" name="vc1">A. Buying software licenses in bulk</label>
+        <label><input type="radio" name="vc1">B. Outsourcing code to another country</label>
+        <label><input type="radio" name="vc1">C. Hiring a startup’s team instead of purchasing the whole company</label>
+        <label><input type="radio" name="vc1">D. Firing staff after a merger</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('vc1')">Check</button><span class="feedback" id="fb-vc1"></span></div>
+    </div>
+
+    <div class="q" data-qid="vc2" data-answer="D">
+      <h4>2) Vocabulary</h4>
+      <p>Which definition best fits <em>vulnerability</em> as used in Summaries B–C?</p>
+      <div class="choices">
+        <label><input type="radio" name="vc2">A. A performance benchmark</label>
+        <label><input type="radio" name="vc2">B. A code formatting rule</label>
+        <label><input type="radio" name="vc2">C. A temporary feature flag</label>
+        <label><input type="radio" name="vc2">D. A weakness that attackers can exploit</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('vc2')">Check</button><span class="feedback" id="fb-vc2"></span></div>
+    </div>
+
+    <div class="q" data-qid="vc3" data-answer="B">
+      <h4>3) Vocabulary</h4>
+      <p>To <em>propagate</em> malicious prompts across a repository means to:</p>
+      <div class="choices">
+        <label><input type="radio" name="vc3">A. Hide them in compiled binaries</label>
+        <label><input type="radio" name="vc3">B. Cause them to spread from file to file</label>
+        <label><input type="radio" name="vc3">C. Delete them before release</label>
+        <label><input type="radio" name="vc3">D. Approve them during review</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('vc3')">Check</button><span class="feedback" id="fb-vc3"></span></div>
+    </div>
+
+    <div class="q" data-qid="vc4" data-answer="A">
+      <h4>4) Collocation</h4>
+      <p>Before merging AI‑generated changes, the team conducts a thorough code ____.</p>
+      <div class="choices">
+        <label><input type="radio" name="vc4">A. review</label>
+        <label><input type="radio" name="vc4">B. revenue</label>
+        <label><input type="radio" name="vc4">C. reversal</label>
+        <label><input type="radio" name="vc4">D. reveal</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('vc4')">Check</button><span class="feedback" id="fb-vc4"></span></div>
+    </div>
+
+    <div class="q" data-qid="vc5" data-answer="C">
+      <h4>5) Collocation</h4>
+      <p>Fill the blank with the best word: Strong ______ oversight is essential when using coding agents.</p>
+      <div class="choices">
+        <label><input type="radio" name="vc5">A. circular</label>
+        <label><input type="radio" name="vc5">B. optional</label>
+        <label><input type="radio" name="vc5">C. human</label>
+        <label><input type="radio" name="vc5">D. ambient</label>
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkMC('vc5')">Check</button><span class="feedback" id="fb-vc5"></span></div>
+    </div>
+
+    <h3>C) Grammar Cloze (2 items)</h3>
+    <div class="q" data-qid="gr1">
+      <h4>1) Theme: Passive voice (future)</h4>
+      <p>According to Summary A: “New downloads will stop after early October, but the app ______ for existing users.”</p>
+      <div class="cloze">
+        <input type="text" id="gr1-input" placeholder="Type the full verb phrase" />
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkCloze('gr1',[/^will\s+be\s+maintained$/i])">Check</button><span class="feedback" id="fb-gr1"></span></div>
+    </div>
+
+    <div class="q" data-qid="gr2">
+      <h4>2) Theme: Modals of possibility</h4>
+      <p>From Summary C: “If hidden prompts are embedded in documentation, they ______ across repositories.”</p>
+      <div class="cloze">
+        <input type="text" id="gr2-input" placeholder="e.g., can … / may …" />
+      </div>
+      <div class="controls"><button class="btn primary" onclick="checkCloze('gr2',[/^can\s+propagate$/i,/^may\s+propagate$/i,/^could\s+propagate$/i])">Check</button><span class="feedback" id="fb-gr2"></span></div>
+    </div>
+
+    <h3>D) Speaking Prompt (30 seconds)</h3>
+    <div class="q">
+      <h4>Task</h4>
+      <p>Topic: Companies are embedding AI agents into developer workflows while researchers flag new risks (e.g., hidden prompt attacks). In 30 seconds, state your position: <strong>Should organizations scale “vibe coding” beyond prototypes into core systems?</strong> Include one pro and one con.</p>
+      <p class="meta">Tip: Use signposting (First, However, Therefore) and concrete examples.</p>
+    </div>
+
+    <div class="controls">
+      <button class="btn ghost" onclick="checkAll()">Check All</button>
+      <button class="btn" onclick="resetAll()">Reset</button>
+    </div>
+  </section>
+
+  <div class="divider" role="separator" aria-label="divider"></div>
+
+  <section id="answers">
+    <h2>Answers &amp; Explanations</h2>
+    <p class="print-note">Print note: this section starts on a new page when printing.</p>
+
+    <h3>A) Reading Comprehension</h3>
+    <div class="ans"><h4></h4><p><strong>Answer:</strong> B. <em>AI is moving deeper into tools, boosting speed but demanding oversight.</em> Developers gain speed (A, B) while risks like prompt‑based attacks and design flaws require control (B, C).</p></div>
+    <div class="ans"><h4></h4><p><strong>Answer:</strong> B. The app stops new downloads after early October but continues maintenance for current users. This reflects a shift from standalone plugins to integrated tooling.</p></div>
+    <div class="ans"><h4></h4><p><strong>Answer:</strong> C. Architectural/threat reviews are essential because AI produces large multi‑file diffs where design flaws and misconfigurations may hide.</p></div>
+    <div class="ans"><h4></h4><p><strong>Answer:</strong> B. <em>Propagate</em> = spread/multiply, especially across files or systems.</p></div>
+    <div class="ans"><h4></h4><p><strong>Answer:</strong> B. AI reduces some errors but does not eliminate them; increased findings demand human oversight.</p></div>
+
+    <h3>B) Vocabulary &amp; Collocation</h3>
+    <div class="ans"><h4></h4><p><strong>acqui‑hire</strong> → C. <em>Hiring a startup’s team instead of buying the company.</em> <br><em>Example:</em> “The cloud giant made an acqui‑hire to speed up its agent roadmap.”</p></div>
+    <div class="ans"><h4></h4><p><strong>vulnerability</strong> → D. <em>A weakness exploitable by attackers.</em> <br><em>Example:</em> “Scanning caught a privilege‑escalation vulnerability introduced by an assistant.”</p></div>
+    <div class="ans"><h4></h4><p><strong>propagate</strong> → B. <em>To spread from place to place.</em> <br><em>Example:</em> “A poisoned LICENSE file can propagate risky code across new modules.”</p></div>
+    <div class="ans"><h4></h4><p><strong>code review</strong> → A. Natural collocation meaning a systematic check of code before merging. <br><em>Example:</em> “Every AI‑generated diff must pass code review.”</p></div>
+    <div class="ans"><h4></h4><p><strong>human oversight</strong> → C. Natural collocation for accountable supervision by people. <br><em>Example:</em> “Human oversight decides whether the agent’s plan is acceptable.”</p></div>
+
+    <h3>C) Grammar Cloze</h3>
+    <div class="ans"><h4></h4><p><strong>Correct:</strong> <em>will be maintained</em>. <span class="tag">Passive (future)</span> — <em>be</em> + past participle describes an action done to the subject in future time.</p></div>
+    <div class="ans"><h4></h4><p><strong>Correct:</strong> <em>can propagate</em> (also acceptable: <em>may/could propagate</em>). <span class="tag">Modals of possibility</span> — use a modal + base verb to show non‑certain outcomes.</p></div>
+
+    <h3>D) Speaking Prompt — Sample Outline (not a full script)</h3>
+    <div class="ans"><h4></h4>
+      <p>
+        <strong>Hook:</strong> “AI can code in minutes—but what about the blast radius?” →
+        <strong>Point:</strong> Scale vibecoding only with guardrails. →
+        <strong>Evidence:</strong> Speed gains vs. rising security findings; hidden‑prompt risks; integration trends. →
+        <strong>Counter:</strong> Prototypes alone won’t deliver ROI; careful rollout to non‑critical areas first. →
+        <strong>Close:</strong> “Adopt fast, review faster—humans sign the merge.”
+      </p>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <ul class="src-list">
+      <li>
+        OpenAI hires the team behind Xcode coding assistant Alex / TechCrunch / https://techcrunch.com/2025/09/05/openai-hires-the-team-behind-xcode-coding-assistant-alex-codes/ / <strong>2025-09-05 JST</strong>
+      </li>
+      <li>
+        AI is creating code faster — but this also means more potential security issues (Apiiro report) / TechRadar Pro / https://www.techradar.com/pro/ai-is-creating-code-faster-but-this-also-means-more-potential-security-issues / <strong>2025-09-05 JST</strong>
+      </li>
+      <li>
+        Coinbase’s Go‑To AI Coding Tool Found Vulnerable to ‘CopyPasta’ Exploit / CoinDesk / https://www.coindesk.com/tech/2025/09/06/coinbase-s-go-to-ai-coding-tool-found-vulnerable-to-copypasta-exploit / <strong>2025-09-06 JST</strong>
+      </li>
+    </ul>
+    <p class="meta">All article content above is paraphrased for educational use.</p>
+  </section>
+</main>
+
+<script>
+function checkMC(qid){
+  const box = document.querySelector('.q[data-qid="'+qid+'"]');
+  const correct = box.dataset.answer.trim();
+  const inputs = document.querySelectorAll('input[name="'+qid+'"]');
+  let picked = null; inputs.forEach(i=>{ if(i.checked){ picked = i.parentElement.textContent.trim().charAt(0); } });
+  const fb = document.getElementById('fb-'+qid);
+  if(!picked){ fb.textContent='Please choose an option.'; fb.className='feedback'; return; }
+  if(picked===correct){ fb.textContent='Correct!'; fb.className='feedback ok'; }
+  else{ fb.textContent='Try again.'; fb.className='feedback ng'; }
+}
+function checkCloze(qid, patterns){
+  const input = document.getElementById(qid+'-input');
+  const val = (input.value||'').trim();
+  const fb = document.getElementById('fb-'+qid);
+  if(!val){ fb.textContent='Please type your answer.'; fb.className='feedback'; return; }
+  const ok = patterns.some(p=>p.test(val));
+  fb.textContent = ok ? 'Correct!' : 'Try again.';
+  fb.className = 'feedback ' + (ok?'ok':'ng');
+}
+function checkAll(){
+  document.querySelectorAll('.q[data-qid]').forEach(q=>{
+    const id = q.dataset.qid;
+    if(q.querySelector('input[type="radio"]')) checkMC(id);
+    if(document.getElementById(id+'-input')){
+      const btn = q.querySelector('button'); if(btn && btn.getAttribute('onclick').startsWith('checkCloze')) btn.click();
+    }
+  });
+}
+function resetAll(){
+  document.querySelectorAll('input[type="radio"]').forEach(i=>{i.checked=false});
+  document.querySelectorAll('input[type="text"]').forEach(i=>{i.value=''});
+  document.querySelectorAll('.feedback').forEach(f=>{f.textContent='';f.className='feedback'});
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
