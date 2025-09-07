@@ -10,6 +10,7 @@ on:
 # GITHUB_TOKEN に contents: write を付与（push のため）
 permissions:
   contents: write
+  pull-requests: write
 
 # 同一ブランチでの同時実行を整理（競合軽減）
 concurrency:
@@ -53,21 +54,12 @@ jobs:
                 echo "- [\`$f\`](./$f)" >> $TMP
               done
 
-          # README にマーカーがない場合は末尾に追加してコミット
+          # README にマーカーがない場合は末尾に追加（コミットはしない）
           if ! grep -q "$START" "$README"; then
             printf "\n%s\n\n" "$START" >> "$README"
             cat $TMP >> "$README"
             printf "\n%s\n" "$END" >> "$README"
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add "$README"
-            git commit -m "chore: add HTML list to README"
-            BRANCH=$(git rev-parse --abbrev-ref HEAD)
-            git fetch origin "$BRANCH"
-            git rebase "origin/$BRANCH"
-            git push
-            echo "Added markers and HTML list to README"
-            exit 0
+            echo "Added markers and HTML list to README (no commit here)"
           fi
 
           # マーカーで囲まれた箇所を置換（awk）
@@ -90,21 +82,24 @@ jobs:
 
           mv README.new "$README"
 
-          # commit only if changed
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$README"
-
-          # staged に変更が無ければ終了（無限ループ防止）
-          if git diff --staged --quiet; then
+          # 変更が無ければ終了（PRは作らない）
+          if git diff --quiet -- "$README"; then
             echo "No changes to README"
             exit 0
           fi
 
-          git commit -m "chore: update HTML file list in README"
-          BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          git fetch origin "$BRANCH"
-          git rebase "origin/$BRANCH"
-          git push
+          echo "README updated; will open/update PR in next step"
+
+      - name: Create PR for README update
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: chore: update HTML file list in README
+          branch: chore/update-readme-html-list
+          title: "chore: update HTML file list in README"
+          body: "Automated update of README HTML file list."
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          signoff: false
       - name: Done
         run: echo "Done"
