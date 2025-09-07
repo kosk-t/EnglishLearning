@@ -7,6 +7,10 @@ on:
       - '**/*.html'
     # branches: [ 'main' ]   # 必要なら有効化
 
+# GITHUB_TOKEN に contents: write を付与（push のため）
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -15,6 +19,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          # 明示的にデフォルトトークンを利用（明確化のため。なくてもOK）
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate and update README HTML list
         run: |
