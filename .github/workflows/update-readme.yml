@@ -80,8 +80,11 @@ jobs:
             }' "$README" > README.new || true
 
           mv README.new "$README"
+          
+          # 一時ファイルを削除
+          rm -f $TMP
 
-          # 変更が無ければ終了（PRは作らない）
+          # 変更が無ければ終了
           if git diff --quiet -- "$README"; then
             echo "No changes to README"
             exit 0
@@ -94,6 +97,10 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add README.md
+          if git diff --staged --quiet; then
+            echo "No staged changes to commit"
+            exit 0
+          fi
           git commit -m "chore: update HTML file list in README"
           git push
 
