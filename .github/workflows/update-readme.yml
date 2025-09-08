@@ -10,7 +10,6 @@ on:
 # GITHUB_TOKEN に contents: write を付与（push のため）
 permissions:
   contents: write
-  pull-requests: write
 
 # 同一ブランチでの同時実行を整理（競合軽減）
 concurrency:
@@ -88,18 +87,15 @@ jobs:
             exit 0
           fi
 
-          echo "README updated; will open/update PR in next step"
+          echo "README updated; committing directly to main branch"
 
-      - name: Create PR for README update
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore: update HTML file list in README'
-          branch: chore/update-readme-html-list
-          title: "chore: update HTML file list in README"
-          body: "Automated update of README HTML file list."
-          author: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
-          committer: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
-          signoff: false
+      - name: Commit and push README update
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "chore: update HTML file list in README"
+          git push
+
       - name: Done
         run: echo "Done"
