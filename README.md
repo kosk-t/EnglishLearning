@@ -12,4 +12,5 @@
 - [`ai_news_english_pack_2025_09_28_jst.html`](./ai_news_english_pack_2025_09_28_jst.html)
 - [`ai_vibe_coding_news_based_english_pack_2025_09_06_jst.html`](./ai_vibe_coding_news_based_english_pack_2025_09_06_jst.html)
 - [`ai_vibe_coding_news_english_pack_2025_09_07_jst.html`](./ai_vibe_coding_news_english_pack_2025_09_07_jst.html)
+- [`news_english_pack_japan_2025_10_18_jst.html`](./news_english_pack_japan_2025_10_18_jst.html)
 <!-- HTML_LIST_END -->
